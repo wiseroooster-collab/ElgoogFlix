@@ -1903,4 +1903,106 @@ theMatrix: {
           ]
       }
   }
+    <footer class="py-10 text-center opacity-20 hover:opacity-100 transition">
+    <button onclick="openAdminLogin()" class="text-[10px] uppercase tracking-widest">Access Terminal</button>
+</footer>
+
+<div id="adminModal" class="fixed inset-0 z-[300] hidden bg-black/95 flex items-center justify-center backdrop-blur-3xl">
+    <div class="w-full max-w-md p-8 bg-zinc-900 rounded-3xl border border-white/10 shadow-2xl">
+        <h2 class="text-2xl font-black mb-6 text-red-600 uppercase italic">Admin Terminal</h2>
+        <div class="space-y-4">
+            <input type="text" id="adminUser" placeholder="Username" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl outline-none focus:border-red-600 transition">
+            <input type="password" id="adminPass" placeholder="Password" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl outline-none focus:border-red-600 transition">
+            <button onclick="tryAdminLogin()" class="w-full bg-red-600 py-4 rounded-xl font-black uppercase tracking-widest hover:bg-red-700 transition">Initialize</button>
+            <button onclick="closeAdmin()" class="w-full text-gray-500 text-xs font-bold uppercase">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<div id="adminDashboard" class="fixed inset-0 z-[301] hidden bg-zinc-950 overflow-y-auto p-8">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex justify-between items-center mb-10">
+            <h2 class="text-3xl font-black uppercase italic text-red-600">Entry Generator</h2>
+            <button onclick="logoutAdmin()" class="bg-white/10 px-4 py-2 rounded-lg text-xs font-bold">Logout</button>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-6 bg-white/5 p-8 rounded-3xl border border-white/10">
+            <div class="space-y-4">
+                <input type="text" id="newId" placeholder="Internal ID (e.g., spiderMan4)" class="admin-input w-full bg-black border border-white/10 p-3 rounded-lg">
+                <input type="text" id="newTitle" placeholder="Movie Title" class="admin-input w-full bg-black border border-white/10 p-3 rounded-lg">
+                <input type="text" id="newImg" placeholder="Image URL (Poster)" class="admin-input w-full bg-black border border-white/10 p-3 rounded-lg">
+                <input type="text" id="newUrl" placeholder="Google Drive Preview URL" class="admin-input w-full bg-black border border-white/10 p-3 rounded-lg">
+                <input type="text" id="newTags" placeholder="Tags (Action, Horror...)" class="admin-input w-full bg-black border border-white/10 p-3 rounded-lg">
+                <input type="text" id="newRating" placeholder="Rating (e.g., 8.5)" class="admin-input w-full bg-black border border-white/10 p-3 rounded-lg">
+                <button onclick="generateCode()" class="w-full bg-green-600 py-4 rounded-xl font-black uppercase">Generate JSON Code</button>
+            </div>
+            
+            <div class="flex flex-col">
+                <label class="text-[10px] font-black uppercase text-gray-500 mb-2">Result (Copy this to GitHub):</label>
+                <textarea id="resultCode" readonly class="flex-grow bg-black border border-white/10 p-4 rounded-xl font-mono text-xs text-green-400 outline-none"></textarea>
+                <button onclick="copyAdminCode()" class="mt-4 bg-white text-black py-2 rounded-lg font-bold text-xs">Copy to Clipboard</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // --- ADMIN SYSTEM ---
+    const CREDENTIALS = { u: 'admin', p: 'luxe2026' };
+
+    function openAdminLogin() {
+        document.getElementById('adminModal').classList.remove('hidden');
+    }
+
+    function closeAdmin() {
+        document.getElementById('adminModal').classList.add('hidden');
+    }
+
+    function tryAdminLogin() {
+        const u = document.getElementById('adminUser').value;
+        const p = document.getElementById('adminPass').value;
+
+        if (u === CREDENTIALS.u && p === CREDENTIALS.p) {
+            document.getElementById('adminModal').classList.add('hidden');
+            document.getElementById('adminDashboard').classList.remove('hidden');
+        } else {
+            alert("Terminal Access Denied.");
+        }
+    }
+
+    function logoutAdmin() {
+        document.getElementById('adminDashboard').classList.add('hidden');
+        document.getElementById('adminUser').value = '';
+        document.getElementById('adminPass').value = '';
+    }
+
+    function generateCode() {
+        const id = document.getElementById('newId').value;
+        const title = document.getElementById('newTitle').value;
+        const img = document.getElementById('newImg').value;
+        const url = document.getElementById('newUrl').value;
+        const tags = document.getElementById('newTags').value.split(',').map(t => t.trim());
+        const rating = document.getElementById('newRating').value;
+
+        const entry = `
+    ${id}: {
+        id: '${id}',
+        type: 'movie',
+        title: "${title}",
+        url: "${url}",
+        imageUrl: "${img}",
+        rating: "${rating}/10",
+        metaTags: ${JSON.stringify(tags)}
+    },`;
+
+        document.getElementById('resultCode').value = entry;
+    }
+
+    function copyAdminCode() {
+        const copyText = document.getElementById('resultCode');
+        copyText.select();
+        document.execCommand("copy");
+        alert("JSON code copied! Paste this into your movieData.js file on GitHub.");
+    }
+</script>
 };
