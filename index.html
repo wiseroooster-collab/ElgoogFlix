@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StreamFlix - Watch Movies & TV Shows</title>
+    <title>ELGOOG-HUB - Watch Movies & TV Shows</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300 ;400;500;600;700;800&display=swap');
         
         * {
             margin: 0;
@@ -21,10 +21,12 @@
             cursor: none !important;
         }
         
+        /* Force hide default cursor on ALL elements */
         *, *::before, *::after {
             cursor: none !important;
         }
         
+        /* Custom Cursor - FIXED SPEED */
         #custom-cursor {
             position: fixed;
             width: 20px;
@@ -45,6 +47,7 @@
             height: 30px;
         }
         
+        /* Intro */
         #intro-container {
             position: fixed;
             top: 0;
@@ -95,10 +98,24 @@
         }
         
         @keyframes netflixZoom {
-            0% { opacity: 0; transform: scale(3); filter: blur(20px); }
-            20% { opacity: 1; transform: scale(1); filter: blur(0); }
-            80% { opacity: 1; transform: scale(1); }
-            100% { opacity: 0; transform: scale(0.8); }
+            0% {
+                opacity: 0;
+                transform: scale(3);
+                filter: blur(20px);
+            }
+            20% {
+                opacity: 1;
+                transform: scale(1);
+                filter: blur(0);
+            }
+            80% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
         }
         
         .intro-flash {
@@ -112,13 +129,16 @@
             pointer-events: none;
         }
         
-        .intro-flash.active { animation: flashEffect 0.3s ease; }
+        .intro-flash.active {
+            animation: flashEffect 0.3s ease;
+        }
         
         @keyframes flashEffect {
             0%, 100% { opacity: 0; }
             50% { opacity: 0.3; }
         }
         
+        /* Sign In Modal */
         #signin-modal {
             position: fixed;
             top: 0;
@@ -133,7 +153,9 @@
             backdrop-filter: blur(10px);
         }
         
-        #signin-modal.active { display: flex; }
+        #signin-modal.active {
+            display: flex;
+        }
         
         .signin-container {
             background: rgba(20, 20, 20, 0.95);
@@ -149,7 +171,9 @@
             font-weight: 700;
         }
         
-        .form-group { margin-bottom: 20px; }
+        .form-group {
+            margin-bottom: 20px;
+        }
         
         .form-group input {
             width: 100%;
@@ -163,7 +187,9 @@
             transition: background 0.3s;
         }
         
-        .form-group input:focus { background: #444; }
+        .form-group input:focus {
+            background: #444;
+        }
         
         .btn-primary {
             width: 100%;
@@ -211,6 +237,7 @@
             text-decoration: underline;
         }
         
+        /* Header */
         #main-header {
             position: fixed;
             top: 0;
@@ -250,7 +277,9 @@
             transition: color 0.3s;
         }
         
-        .nav-links a:hover, .nav-links a.active { color: #fff; }
+        .nav-links a:hover, .nav-links a.active {
+            color: #fff;
+        }
         
         .header-right {
             display: flex;
@@ -258,7 +287,9 @@
             gap: 20px;
         }
         
-        .search-container { position: relative; }
+        .search-container {
+            position: relative;
+        }
         
         #search-input {
             background: rgba(0, 0, 0, 0.75);
@@ -292,7 +323,9 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .search-autocomplete.active { display: block; }
+        .search-autocomplete.active {
+            display: block;
+        }
         
         .search-suggestion {
             padding: 12px 15px;
@@ -303,7 +336,9 @@
             transition: background 0.2s;
         }
         
-        .search-suggestion:hover { background: rgba(255, 255, 255, 0.1); }
+        .search-suggestion:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
         
         .search-suggestion img {
             width: 40px;
@@ -312,9 +347,13 @@
             border-radius: 2px;
         }
         
-        .search-suggestion span { font-size: 14px; }
+        .search-suggestion span {
+            font-size: 14px;
+        }
         
-        .profile-menu { position: relative; }
+        .profile-menu {
+            position: relative;
+        }
         
         .profile-btn {
             width: 35px;
@@ -326,7 +365,6 @@
             justify-content: center;
             font-weight: 600;
             overflow: hidden;
-            font-size: 20px;
         }
         
         .profile-btn img {
@@ -348,7 +386,9 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .profile-dropdown.active { display: block; }
+        .profile-dropdown.active {
+            display: block;
+        }
         
         .profile-dropdown a {
             display: block;
@@ -359,13 +399,17 @@
             transition: background 0.2s;
         }
         
-        .profile-dropdown a:hover { background: rgba(255, 255, 255, 0.1); }
+        .profile-dropdown a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
         
+        /* Main Content */
         #main-content {
             min-height: 100vh;
             padding-top: 70px;
         }
         
+        /* Hero Section */
         .hero {
             position: relative;
             height: 80vh;
@@ -453,7 +497,9 @@
             transition: opacity 0.3s;
         }
         
-        .btn-play:hover { opacity: 0.8; }
+        .btn-play:hover {
+            opacity: 0.8;
+        }
         
         .btn-more {
             background: rgba(109, 109, 110, 0.7);
@@ -469,8 +515,11 @@
             transition: background 0.3s;
         }
         
-        .btn-more:hover { background: rgba(109, 109, 110, 0.9); }
+        .btn-more:hover {
+            background: rgba(109, 109, 110, 0.9);
+        }
         
+        /* Content Rows - FIXED SCROLLING */
         .content-row {
             padding: 30px 4%;
             position: relative;
@@ -484,7 +533,15 @@
             margin-bottom: 20px;
         }
         
-        .row-title { font-size: 20px; font-weight: 600; }
+        .row-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .row-actions {
+            display: flex;
+            gap: 10px;
+        }
         
         .scroll-btn {
             width: 40px;
@@ -504,9 +561,17 @@
             justify-content: center;
         }
         
-        .content-row:hover .scroll-btn { opacity: 1; }
-        .scroll-btn.prev { left: 2%; }
-        .scroll-btn.next { right: 2%; }
+        .content-row:hover .scroll-btn {
+            opacity: 1;
+        }
+        
+        .scroll-btn.prev {
+            left: 2%;
+        }
+        
+        .scroll-btn.next {
+            right: 2%;
+        }
         
         .row-content {
             display: flex;
@@ -517,8 +582,11 @@
             scrollbar-width: none;
         }
         
-        .row-content::-webkit-scrollbar { display: none; }
+        .row-content::-webkit-scrollbar {
+            display: none;
+        }
         
+        /* Movie Card - FIXED WITH GLOW EFFECT */
         .movie-card {
             flex: 0 0 auto;
             width: 240px;
@@ -543,6 +611,10 @@
             display: block;
         }
         
+        .movie-info {
+            display: none;
+        }
+        
         .movie-title-popup {
             position: fixed;
             background: rgba(0, 0, 0, 0.9);
@@ -562,7 +634,7 @@
             opacity: 1;
         }
         
-        /* FIXED VIDEO PLAYER STYLES */
+        /* Video Player */
         #video-player {
             position: fixed;
             top: 0;
@@ -588,10 +660,6 @@
             width: 100%;
             height: 100%;
             border: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
         }
         
         .video-overlay {
@@ -603,10 +671,6 @@
             pointer-events: none;
             opacity: 0;
             transition: opacity 0.3s;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
         
         .video-overlay.active {
@@ -614,14 +678,11 @@
             pointer-events: all;
         }
         
-        /* Keep overlay visible when hovering */
-        .video-overlay:hover {
-            opacity: 1;
-            pointer-events: all;
-        }
-        
         .video-header {
-            position: relative;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
             padding: 30px;
             background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, transparent 100%);
             display: flex;
@@ -629,23 +690,19 @@
             align-items: flex-start;
             transform: translateY(-100%);
             transition: transform 0.3s;
-            z-index: 10;
-            pointer-events: all;
         }
         
-        .video-overlay.active .video-header,
-        .video-overlay:hover .video-header {
+        .video-overlay.active .video-header {
             transform: translateY(0);
         }
         
         .video-title {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 600;
             background: rgba(0, 0, 0, 0.8);
             padding: 8px 16px;
             border-radius: 4px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            pointer-events: none;
         }
         
         .video-close {
@@ -660,28 +717,25 @@
             align-items: center;
             justify-content: center;
             transition: background 0.3s, transform 0.2s;
-            cursor: pointer;
-            z-index: 100;
-            pointer-events: all;
         }
         
         .video-close:hover {
-            background: #e50914;
+            background: rgba(229, 9, 20, 0.9);
             transform: scale(1.1);
         }
         
         .video-controls {
-            position: relative;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
             padding: 30px;
             background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 100%);
             transform: translateY(100%);
             transition: transform 0.3s;
-            z-index: 10;
-            pointer-events: all;
         }
         
-        .video-overlay.active .video-controls,
-        .video-overlay:hover .video-controls {
+        .video-overlay.active .video-controls {
             transform: translateY(0);
         }
         
@@ -699,7 +753,6 @@
             border-radius: 2px;
             position: relative;
             overflow: hidden;
-            cursor: pointer;
         }
         
         .progress-fill {
@@ -763,9 +816,6 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            cursor: pointer;
-            pointer-events: all;
-            z-index: 20;
         }
         
         .control-btn:hover {
@@ -786,7 +836,6 @@
             border-radius: 2px;
             position: relative;
             overflow: hidden;
-            cursor: pointer;
         }
         
         .volume-fill {
@@ -818,9 +867,6 @@
             align-items: center;
             gap: 10px;
             transition: background 0.2s;
-            cursor: pointer;
-            pointer-events: all;
-            z-index: 20;
         }
         
         .season-btn:hover {
@@ -841,7 +887,9 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .season-dropdown.active { display: block; }
+        .season-dropdown.active {
+            display: block;
+        }
         
         .season-option {
             padding: 12px 16px;
@@ -850,15 +898,19 @@
             cursor: pointer;
         }
         
-        .season-option:hover { background: rgba(255, 255, 255, 0.1); }
+        .season-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
         
-        .season-option.active { background: #e50914; }
+        .season-option.active {
+            background: #e50914;
+        }
         
         .episodes-panel {
             position: absolute;
             bottom: 100%;
-            right: 30px;
-            margin-bottom: 20px;
+            right: 0;
+            margin-bottom: 10px;
             background: rgba(20, 20, 20, 0.98);
             border-radius: 8px;
             max-height: 500px;
@@ -867,10 +919,11 @@
             display: none;
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 20px;
-            z-index: 100;
         }
         
-        .episodes-panel.active { display: block; }
+        .episodes-panel.active {
+            display: block;
+        }
         
         .episodes-header {
             display: flex;
@@ -899,8 +952,6 @@
             justify-content: center;
             border-radius: 50%;
             transition: background 0.2s;
-            pointer-events: all;
-            z-index: 20;
         }
         
         .close-episodes:hover {
@@ -915,7 +966,6 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             cursor: pointer;
             border-radius: 4px;
-            pointer-events: all;
         }
         
         .episode-item:hover {
@@ -967,6 +1017,7 @@
             overflow: hidden;
         }
         
+        /* Exit Confirmation */
         #exit-confirm {
             position: fixed;
             top: 0;
@@ -1009,6 +1060,7 @@
             justify-content: center;
         }
         
+        /* Notification */
         #notification {
             position: fixed;
             top: 100px;
@@ -1021,7 +1073,6 @@
             transition: transform 0.3s;
             z-index: 10002;
             max-width: 350px;
-            color: #fff;
         }
         
         #notification.active {
@@ -1032,6 +1083,7 @@
             border-left-color: #46d369;
         }
         
+        /* Profile Selector */
         #profile-selector {
             position: fixed;
             top: 0;
@@ -1126,6 +1178,7 @@
             background: rgba(255, 255, 255, 0.05);
         }
         
+        /* Profile Creation Modal */
         #profile-creation-modal {
             position: fixed;
             top: 0;
@@ -1198,11 +1251,6 @@
             border: 3px solid transparent;
             transition: all 0.2s;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            background: #333;
         }
         
         .avatar-option img {
@@ -1226,6 +1274,7 @@
             justify-content: center;
         }
         
+        /* Movie Detail Modal */
         #movie-detail {
             position: fixed;
             top: 0;
@@ -1288,7 +1337,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
         }
         
         .detail-close:hover {
@@ -1378,6 +1426,7 @@
             color: #999;
         }
         
+        /* Season Selector in Detail */
         .detail-season-selector {
             margin-bottom: 20px;
         }
@@ -1438,18 +1487,48 @@
             line-height: 1.4;
         }
         
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero-title { font-size: 36px; }
-            .movie-card { width: 160px; }
-            .movie-card:hover { transform: scale(1.2); }
-            .nav-links { display: none; }
-            #search-input { width: 150px; }
-            #search-input:focus { width: 180px; }
-            .profiles-grid { flex-wrap: wrap; }
-            .avatar-grid { grid-template-columns: repeat(3, 1fr); }
-            .episodes-panel { width: 100%; right: 0; left: 0; }
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .movie-card {
+                width: 160px;
+            }
+            
+            .movie-card:hover {
+                transform: scale(1.2);
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            #search-input {
+                width: 150px;
+            }
+            
+            #search-input:focus {
+                width: 180px;
+            }
+            
+            .profiles-grid {
+                flex-wrap: wrap;
+            }
+            
+            .avatar-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .episodes-panel {
+                width: 100%;
+                right: 0;
+                left: 0;
+            }
         }
         
+        /* Loading */
         .loading {
             display: flex;
             align-items: center;
@@ -1466,8 +1545,11 @@
             animation: spin 1s linear infinite;
         }
         
-        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
         
+        /* Empty State */
         .empty-state {
             text-align: center;
             padding: 60px;
@@ -1480,6 +1562,7 @@
             color: #fff;
         }
         
+        /* Genre Filter */
         .genre-filter {
             display: flex;
             gap: 10px;
@@ -1488,7 +1571,9 @@
             scrollbar-width: none;
         }
         
-        .genre-filter::-webkit-scrollbar { display: none; }
+        .genre-filter::-webkit-scrollbar {
+            display: none;
+        }
         
         .genre-btn {
             background: rgba(255, 255, 255, 0.1);
@@ -1499,15 +1584,12 @@
             white-space: nowrap;
             transition: all 0.3s;
             font-size: 14px;
-            cursor: pointer;
         }
         
         .genre-btn:hover, .genre-btn.active {
             background: #fff;
             color: #000;
         }
-        
-        .hidden { display: none !important; }
     </style>
 </head>
 <body>
@@ -1518,14 +1600,14 @@
     <div id="intro-container">
         <div class="netflix-intro">
             <div class="netflix-logo">
-                <div class="netflix-text">STREAMFLIX</div>
+                <div class="netflix-text">ELGOOG-HUB</div>
             </div>
             <div class="intro-flash"></div>
         </div>
     </div>
     
     <!-- Sign In Modal -->
-    <div id="signin-modal" class="hidden">
+    <div id="signin-modal">
         <div class="signin-container">
             <h2 id="signin-title">Sign In</h2>
             <form id="auth-form">
@@ -1541,13 +1623,13 @@
                 <button type="submit" class="btn-primary" id="auth-submit">Sign In</button>
             </form>
             <div class="form-switch">
-                <span id="switch-text">New to StreamFlix?</span> <span id="switch-link">Sign up now</span>.
+                <span id="switch-text">New to ELGOOG-HUB?</span> <span id="switch-link">Sign up now</span>.
             </div>
         </div>
     </div>
     
     <!-- Profile Selector -->
-    <div id="profile-selector" class="hidden">
+    <div id="profile-selector">
         <div class="profiles-container">
             <h2>Who's watching?</h2>
             <div class="profiles-grid" id="profiles-grid"></div>
@@ -1556,7 +1638,7 @@
     </div>
     
     <!-- Profile Creation Modal -->
-    <div id="profile-creation-modal" class="hidden">
+    <div id="profile-creation-modal">
         <div class="profile-creation-container">
             <h2>Create Profile</h2>
             <input type="text" class="profile-name-input" id="new-profile-name" placeholder="Profile Name" maxlength="20">
@@ -1572,9 +1654,9 @@
     </div>
     
     <!-- Main Header -->
-    <header id="main-header" class="hidden">
+    <header id="main-header">
         <div style="display: flex; align-items: center;">
-            <div class="logo">STREAMFLIX</div>
+            <div class="logo">ELGOOG-HUB</div>
             <nav class="nav-links">
                 <a href="#" class="active" data-section="home">Home</a>
                 <a href="#" data-section="tv-shows">TV Shows</a>
@@ -1596,14 +1678,14 @@
                     <a href="#" onclick="switchProfile()">Switch Profile</a>
                     <a href="#" onclick="openAccount()">Account</a>
                     <a href="#" onclick="openHelp()">Help Center</a>
-                    <a href="#" onclick="signOut()">Sign out of StreamFlix</a>
+                    <a href="#" onclick="signOut()">Sign out of ELGOOG-HUB</a>
                 </div>
             </div>
         </div>
     </header>
     
     <!-- Main Content -->
-    <main id="main-content" class="hidden">
+    <main id="main-content">
         <!-- Genre Filter -->
         <div class="genre-filter" id="genre-filter">
             <button class="genre-btn active" data-genre="all">All</button>
@@ -1646,7 +1728,7 @@
     </main>
     
     <!-- Video Player -->
-    <div id="video-player" class="hidden">
+    <div id="video-player">
         <div class="video-container">
             <iframe id="video-iframe" allowfullscreen></iframe>
             <div class="video-overlay" id="video-overlay">
@@ -1698,7 +1780,7 @@
     </div>
     
     <!-- Exit Confirmation -->
-    <div id="exit-confirm" class="hidden">
+    <div id="exit-confirm">
         <div class="exit-dialog">
             <h3>Exit Movie?</h3>
             <p>Are you sure you want to exit? Your progress will be saved.</p>
@@ -1710,7 +1792,7 @@
     </div>
     
     <!-- Movie Detail Modal -->
-    <div id="movie-detail" class="hidden">
+    <div id="movie-detail">
         <div class="detail-container">
             <div class="detail-header" id="detail-header">
                 <button class="detail-close" onclick="closeMovieDetail()">×</button>
@@ -1751,7 +1833,29 @@
 
     <script>
         // ============================================
-        // COMPLETE MOVIE DATA
+        // PROFILE AVATARS
+        // ============================================
+        
+        const profileAvatars = [
+            'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop ',
+            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop ',
+            'https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=150&h=150&fit=crop ',
+            'https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=150&h=150&fit=crop ',
+            'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop ',
+            'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop ',
+            'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop ',
+            'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop ',
+            'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=150&h=150&fit=crop ',
+            'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop ',
+            'https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=150&h=150&fit=crop ',
+            'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop ',
+            'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop ',
+            'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop ',
+            'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&h=150&fit=crop '
+        ];
+
+        // ============================================
+        // YOUR MOVIE DATA - FULLY INTEGRATED
         // ============================================
         
         const movieData = {
@@ -1766,9 +1870,9 @@
                     "match": 98,
                     "genres": ["scifi", "adventure", "action"],
                     "description": "Paul Atreides unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family.",
-                    "poster": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=500&auto=format&fit=crop",
-                    "backdrop": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&auto=format&fit=crop",
-                    "videoUrl": "https://www.youtube.com/embed/Way9Dexny3w"
+                    "poster": "https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg ",
+                    "backdrop": "https://image.tmdb.org/t/p/original/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg ",
+                    "videoUrl": "YOUR_GOOGLE_DRIVE_URL_HERE"
                 },
                 {
                     "id": "trending2",
@@ -1780,66 +1884,28 @@
                     "match": 96,
                     "genres": ["fantasy", "action", "adventure"],
                     "description": "Geralt of Rivia, a solitary monster hunter, struggles to find his place in a world where people often prove more wicked than beasts.",
-                    "poster": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&auto=format&fit=crop",
-                    "backdrop": "https://images.unsplash.com/photo-1514539079130-25950c84af65?w=1200&auto=format&fit=crop",
-                    "videoUrl": "https://www.youtube.com/embed/ndl1W4ltcmg",
+                    "poster": "https://image.tmdb.org/t/p/w500/cZ0d3rttwXP955b2Q10sP77cUJN.jpg ",
+                    "backdrop": "https://image.tmdb.org/t/p/original/pc3A2jbh8jhnr7nNnMB2dX7P7AL.jpg ",
+                    "videoUrl": "YOUR_GOOGLE_DRIVE_URL_HERE",
                     "episodes": {
                         "season1": [
-                            {"episode": 1, "title": "The End's Beginning", "duration": "61m", "description": "Hostile townsfolk and a cunning mage greet Geralt in the town of Blaviken.", "thumbnail": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=300"},
-                            {"episode": 2, "title": "Four Marks", "duration": "60m", "description": "Bullied and neglected, Yennefer accidentally finds a means of escape.", "thumbnail": "https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=300"},
-                            {"episode": 3, "title": "Betrayer Moon", "duration": "67m", "description": "Geralt takes on another Witcher's unfinished business.", "thumbnail": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=300"}
+                            {"episode": 1, "title": "The End's Beginning", "duration": "61m", "description": "Hostile townsfolk and a cunning mage greet Geralt in the town of Blaviken. Ciri finds her royal world upended when Nilfgaard sets its sights on Cintra.", "thumbnail": "https://image.tmdb.org/t/p/w500/episode1.jpg "},
+                            {"episode": 2, "title": "Four Marks", "duration": "60m", "description": "Bullied and neglected, Yennefer accidentally finds a means of escape. Geralt hunts a monster plaguing a village.", "thumbnail": "https://image.tmdb.org/t/p/w500/episode2.jpg "},
+                            {"episode": 3, "title": "Betrayer Moon", "duration": "67m", "description": "Geralt takes on another Witcher's unfinished business in a kingdom stalked by a ferocious beast.", "thumbnail": "https://image.tmdb.org/t/p/w500/episode3.jpg "},
+                            {"episode": 4, "title": "Of Banquets, Bastards and Burials", "duration": "62m", "description": "Against his better judgment, Geralt accompanies Jaskier to a royal ball. Ciri wanders into an enchanted forest.", "thumbnail": "https://image.tmdb.org/t/p/w500/episode4.jpg "},
+                            {"episode": 5, "title": "Bottled Appetites", "duration": "59m", "description": "Heedless of warnings, Yennefer looks for a cure to remove her beauty. Geralt and Jaskier encounter a djinn.", "thumbnail": "https://image.tmdb.org/t/p/w500/episode5.jpg "}
+                        ],
+                        "season2": [
+                            {"episode": 1, "title": "A Grain of Truth", "duration": "63m", "description": "Geralt sets off with Ciri on a journey that leads him to an old friend. After the Battle of Sodden, Tissaia shows no mercy in her search for information.", "thumbnail": "https://image.tmdb.org/t/p/w500/episode1.jpg "},
+                            {"episode": 2, "title": "Kaer Morhen", "duration": "60m", "description": "Geralt takes Ciri to his childhood home of Kaer Morhen. There, the mysterious Triss arrives and begins to train Ciri.", "thumbnail": "https://image.tmdb.org/t/p/w500/episode2.jpg "},
+                            {"episode": 3, "title": "What Is Lost", "duration": "64m", "description": "Geralt's patience is tested as he trains Ciri. Fringilla assumes a new position. Yennefer struggles to find her place.", "thumbnail": "https://image.tmdb.org/t/p/w500/episode3.jpg "}
                         ]
                     }
                 }
             ],
-            "popularMovies": [
-                {
-                    "id": "pop1",
-                    "title": "Spider-Man: Across the Spider-Verse",
-                    "type": "movie",
-                    "year": 2023,
-                    "rating": "PG",
-                    "duration": "2h 20m",
-                    "match": 97,
-                    "genres": ["animation", "action", "adventure"],
-                    "description": "Miles Morales catapults across the Multiverse.",
-                    "poster": "https://images.unsplash.com/photo-1635805737707-575885ab0820?w=500&auto=format&fit=crop",
-                    "backdrop": "https://images.unsplash.com/photo-1531297461136-82lw9z1q19q?w=1200&auto=format&fit=crop",
-                    "videoUrl": "https://www.youtube.com/embed/shW9i6k8cB0"
-                }
-            ],
-            "popularTVShows": [
-                {
-                    "id": "tv1",
-                    "title": "Stranger Things",
-                    "type": "tv",
-                    "year": 2016,
-                    "rating": "TV-14",
-                    "seasons": 4,
-                    "match": 96,
-                    "genres": ["drama", "fantasy", "horror"],
-                    "description": "When a young boy disappears, his mother must confront terrifying supernatural forces.",
-                    "poster": "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?w=500",
-                    "backdrop": "https://images.unsplash.com/photo-1535905557558-afc4877a26fc?w=1200",
-                    "videoUrl": "https://www.youtube.com/embed/b9EkMc79ZSU"
-                }
-            ],
-            "newReleases": [
-                {
-                    "id": "new1",
-                    "title": "The Marvels",
-                    "type": "movie",
-                    "year": 2023,
-                    "rating": "PG-13",
-                    "duration": "1h 45m",
-                    "match": 78,
-                    "genres": ["action", "adventure", "scifi"],
-                    "description": "Carol Danvers teams up with Kamala Khan.",
-                    "poster": "https://images.unsplash.com/photo-1608889475120-ea3e9c7b223f?w=500",
-                    "backdrop": "https://images.unsplash.com/photo-1560932687-45ce2eb0a400?w=1200",
-                    "videoUrl": "https://www.youtube.com/embed/wS_qbDztgVY"
-                }
-            ],
+            "popularMovies": [],
+            "popularTVShows": [],
+            "newReleases": [],
             "top10": [],
             "actionAdventure": [],
             "comedy": [],
@@ -1856,14 +1922,11 @@
             "animation": [],
             "mystery": [],
             "family": [],
-            "upcomingTitles": []
+            "upcomingTitles": [],
+            "recommendedForYou": [],
+            "continueWatching": [],
+            "alreadyWatched": []
         };
-
-        // ============================================
-        // PROFILE AVATARS
-        // ============================================
-        
-        const profileAvatars = ['😀', '😎', '🤓', '🧐', '😍', '🤗', '😋', '🤠', '😇', '🤖', '👨‍💻', '👩‍💻', '🦸‍♂️', '🦸‍♀️', '🧙‍♂️', '🐱', '🐶', '🐰', '🦊', '🐻'];
 
         // ============================================
         // APPLICATION STATE
@@ -1879,15 +1942,8 @@
         let currentDetailMovie = null;
         let currentSeason = 1;
         let selectedAvatar = null;
-        let isSignUp = false;
-        let currentEpisodes = {};
-        let currentEpisodeIndex = 0;
-        let detailCurrentSeason = 1;
-
-        // ============================================
-        // LOCAL STORAGE HELPERS
-        // ============================================
         
+        // Profile-specific data storage
         function getProfileDataKey(key) {
             if (!currentProfile) return null;
             return `profile_${currentProfile.id}_${key}`;
@@ -1905,9 +1961,9 @@
             if (!dataKey) return;
             localStorage.setItem(dataKey, JSON.stringify(value));
         }
-
+        
         // ============================================
-        // CUSTOM CURSOR
+        // CUSTOM CURSOR - FIXED SPEED
         // ============================================
         
         const cursor = document.getElementById('custom-cursor');
@@ -1929,19 +1985,25 @@
         animateCursor();
         
         function addCursorHover() {
-            const interactiveElements = document.querySelectorAll('a, button, .movie-card, .profile-card, .search-suggestion, .genre-btn, .scroll-btn, input, .avatar-option, .season-option, .episode-item, .control-btn, .video-close');
+            const interactiveElements = document.querySelectorAll('a, button, .movie-card, .profile-card, .search-suggestion, .genre-btn, .scroll-btn, input, .avatar-option, .season-option, .episode-item');
             interactiveElements.forEach(el => {
                 el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
                 el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
             });
         }
-
+        
         // ============================================
         // INTRO SEQUENCE
         // ============================================
         
         function playIntro() {
             const intro = document.getElementById('intro-container');
+            
+            try {
+                const audio = new Audio('https://www.soundjay.com/misc/sounds-767.mp3 ');
+                audio.volume = 0.5;
+                audio.play().catch(() => {});
+            } catch(e) {}
             
             setTimeout(() => {
                 document.querySelector('.intro-flash').classList.add('active');
@@ -1955,27 +2017,25 @@
                 }, 800);
             }, 4000);
         }
-
+        
         // ============================================
         // AUTHENTICATION
         // ============================================
         
         function showSignIn() {
-            const modal = document.getElementById('signin-modal');
-            modal.classList.add('active');
-            modal.classList.remove('hidden');
+            document.getElementById('signin-modal').classList.add('active');
         }
         
-        function toggleSignUp() {
+        let isSignUp = false;
+        
+        document.getElementById('switch-link').addEventListener('click', () => {
             isSignUp = !isSignUp;
             document.getElementById('signin-title').textContent = isSignUp ? 'Sign Up' : 'Sign In';
             document.getElementById('auth-submit').textContent = isSignUp ? 'Sign Up' : 'Sign In';
-            document.getElementById('switch-text').textContent = isSignUp ? 'Already have an account?' : 'New to StreamFlix?';
+            document.getElementById('switch-text').textContent = isSignUp ? 'Already have an account?' : 'New to ELGOOG-HUB?';
             document.getElementById('switch-link').textContent = isSignUp ? 'Sign in now' : 'Sign up now';
             document.getElementById('name-group').style.display = isSignUp ? 'block' : 'none';
-        }
-        
-        document.getElementById('switch-link').addEventListener('click', toggleSignUp);
+        });
         
         document.getElementById('auth-form').addEventListener('submit', (e) => {
             e.preventDefault();
@@ -1990,10 +2050,10 @@
                     profiles: [],
                     createdAt: new Date().toISOString()
                 };
-                localStorage.setItem('streamflix_user', JSON.stringify(currentUser));
+                localStorage.setItem('user', JSON.stringify(currentUser));
                 showNotification('Account created successfully!', 'success');
             } else {
-                const saved = localStorage.getItem('streamflix_user');
+                const saved = localStorage.getItem('user');
                 if (saved) {
                     currentUser = JSON.parse(saved);
                     if (currentUser.email !== email) {
@@ -2007,10 +2067,9 @@
             }
             
             document.getElementById('signin-modal').classList.remove('active');
-            document.getElementById('signin-modal').classList.add('hidden');
             showProfileSelector();
         });
-
+        
         // ============================================
         // PROFILE SELECTOR
         // ============================================
@@ -2021,6 +2080,7 @@
             grid.innerHTML = '';
             
             if (currentUser.profiles.length === 0) {
+                // Create default profile
                 const defaultProfile = {
                     id: Date.now().toString(),
                     name: currentUser.name || 'Profile 1',
@@ -2028,7 +2088,7 @@
                     createdAt: new Date().toISOString()
                 };
                 currentUser.profiles.push(defaultProfile);
-                localStorage.setItem('streamflix_user', JSON.stringify(currentUser));
+                localStorage.setItem('user', JSON.stringify(currentUser));
             }
             
             currentUser.profiles.forEach(profile => {
@@ -2036,7 +2096,7 @@
                 card.className = 'profile-card';
                 card.innerHTML = `
                     <div class="profile-avatar">
-                        ${profile.avatar}
+                        <img src="${profile.avatar}" alt="${profile.name}">
                     </div>
                     <div class="profile-name">${profile.name}</div>
                 `;
@@ -2054,17 +2114,16 @@
             grid.appendChild(addCard);
             
             selector.classList.add('active');
-            selector.classList.remove('hidden');
             addCursorHover();
         }
         
         function selectProfile(profile) {
             currentProfile = profile;
             document.getElementById('profile-selector').classList.remove('active');
-            document.getElementById('profile-selector').classList.add('hidden');
             
+            // Update profile button in header
             const profileBtn = document.getElementById('profile-btn');
-            profileBtn.innerHTML = `<div style="font-size: 24px;">${profile.avatar}</div>`;
+            profileBtn.innerHTML = `<img src="${profile.avatar}" alt="${profile.name}">`;
             
             initApp();
         }
@@ -2078,24 +2137,24 @@
             profileAvatars.forEach((avatar, index) => {
                 const div = document.createElement('div');
                 div.className = 'avatar-option';
-                div.innerHTML = `<div style="font-size: 40px;">${avatar}</div>`;
+                div.innerHTML = `<img src="${avatar}" alt="Avatar ${index + 1}">`;
                 div.onclick = () => selectAvatar(div, avatar);
                 grid.appendChild(div);
             });
             
+            // Select first avatar by default
             if (grid.children[0]) {
                 selectAvatar(grid.children[0], profileAvatars[0]);
             }
             
             modal.classList.add('active');
-            modal.classList.remove('hidden');
             addCursorHover();
         }
         
-        function selectAvatar(element, avatar) {
+        function selectAvatar(element, avatarUrl) {
             document.querySelectorAll('.avatar-option').forEach(el => el.classList.remove('selected'));
             element.classList.add('selected');
-            selectedAvatar = avatar;
+            selectedAvatar = avatarUrl;
         }
         
         function saveNewProfile() {
@@ -2118,17 +2177,15 @@
             };
             
             currentUser.profiles.push(newProfile);
-            localStorage.setItem('streamflix_user', JSON.stringify(currentUser));
+            localStorage.setItem('user', JSON.stringify(currentUser));
             
             document.getElementById('profile-creation-modal').classList.remove('active');
-            document.getElementById('profile-creation-modal').classList.add('hidden');
             showProfileSelector();
             showNotification('Profile created successfully!', 'success');
         }
         
         function cancelProfileCreation() {
             document.getElementById('profile-creation-modal').classList.remove('active');
-            document.getElementById('profile-creation-modal').classList.add('hidden');
         }
         
         function switchProfile() {
@@ -2139,30 +2196,18 @@
         function manageProfiles() {
             showNotification('Profile management coming soon!', 'info');
         }
-
+        
         // ============================================
         // APP INITIALIZATION
         // ============================================
         
         function initApp() {
-            document.getElementById('main-header').classList.remove('hidden');
-            document.getElementById('main-content').classList.remove('hidden');
-            
             renderHero();
             renderContentRows();
             setupEventListeners();
             addCursorHover();
-            
-            window.addEventListener('scroll', () => {
-                const header = document.getElementById('main-header');
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
         }
-
+        
         // ============================================
         // HERO SECTION
         // ============================================
@@ -2191,7 +2236,7 @@
         function showHeroDetails() {
             showMovieDetail(currentHero);
         }
-
+        
         // ============================================
         // CONTENT ROWS
         // ============================================
@@ -2202,6 +2247,7 @@
             
             const continueWatching = getProfileData('continueWatching');
             
+            // Add Continue Watching if exists
             if (continueWatching.length > 0) {
                 const row = createContentRow('Continue Watching', continueWatching, true);
                 container.appendChild(row);
@@ -2211,7 +2257,23 @@
                 { title: 'Trending Now', data: movieData.trendingNow },
                 { title: 'Popular Movies', data: movieData.popularMovies },
                 { title: 'Popular TV Shows', data: movieData.popularTVShows },
-                { title: 'New Releases', data: movieData.newReleases }
+                { title: 'New Releases', data: movieData.newReleases },
+                { title: 'Top 10 in Your Country', data: movieData.top10 },
+                { title: 'Action & Adventure', data: movieData.actionAdventure },
+                { title: 'Comedy', data: movieData.comedy },
+                { title: 'Horror', data: movieData.horror },
+                { title: 'Sci-Fi', data: movieData.scifi },
+                { title: 'Drama', data: movieData.drama },
+                { title: 'Anime', data: movieData.anime },
+                { title: 'Documentaries', data: movieData.documentaries },
+                { title: 'Reality TV', data: movieData.reality },
+                { title: 'Romance', data: movieData.romance },
+                { title: 'Thriller', data: movieData.thriller },
+                { title: 'Crime', data: movieData.crime },
+                { title: 'Fantasy', data: movieData.fantasy },
+                { title: 'Animation', data: movieData.animation },
+                { title: 'Mystery', data: movieData.mystery },
+                { title: 'Family', data: movieData.family }
             ];
             
             sections.forEach(section => {
@@ -2252,6 +2314,10 @@
             return row;
         }
         
+        // ============================================
+        // MOVIE CARD
+        // ============================================
+        
         function createMovieCard(movie, isContinue = false) {
             const progress = isContinue ? (movie.progress || 0) : 0;
             return `
@@ -2265,7 +2331,7 @@
                 </div>
             `;
         }
-
+        
         // ============================================
         // MOVIE INTERACTION
         // ============================================
@@ -2291,10 +2357,25 @@
                 ...movieData.trendingNow,
                 ...movieData.popularMovies,
                 ...movieData.popularTVShows,
-                ...movieData.newReleases
+                ...movieData.newReleases,
+                ...movieData.actionAdventure,
+                ...movieData.comedy,
+                ...movieData.horror,
+                ...movieData.scifi,
+                ...movieData.drama,
+                ...movieData.anime,
+                ...movieData.documentaries,
+                ...movieData.reality,
+                ...movieData.romance,
+                ...movieData.thriller,
+                ...movieData.crime,
+                ...movieData.fantasy,
+                ...movieData.animation,
+                ...movieData.mystery,
+                ...movieData.family
             ];
         }
-
+        
         // ============================================
         // TITLE POPUP
         // ============================================
@@ -2310,10 +2391,13 @@
         function hideTitlePopup() {
             document.getElementById('movie-title-popup').classList.remove('visible');
         }
-
+        
         // ============================================
-        // VIDEO PLAYER - FIXED VERSION
+        // VIDEO PLAYER WITH SEASON/EPISODE SELECTION
         // ============================================
+        
+        let currentEpisodes = {};
+        let currentEpisodeIndex = 0;
         
         function playVideo(movie, seasonNum = 1, episodeNum = 1) {
             currentVideo = movie;
@@ -2327,9 +2411,10 @@
             const title = document.getElementById('video-title');
             const seasonSelector = document.getElementById('season-selector');
             
-            let videoUrl = movie.videoUrl;
+            let videoUrl;
             let displayTitle = movie.title;
             
+            // Check if it's a TV show with episodes
             if (movie.type === 'tv' && movie.episodes) {
                 currentEpisodes = movie.episodes;
                 const seasonKey = `season${seasonNum}`;
@@ -2338,7 +2423,11 @@
                 if (episodes && episodes[episodeNum - 1]) {
                     const episode = episodes[episodeNum - 1];
                     displayTitle = `${movie.title} - S${seasonNum}:E${episodeNum} ${episode.title}`;
+                    
+                    // Use episode-specific video URL if available, otherwise fallback
                     videoUrl = episode.videoUrl || movie.videoUrl;
+                } else {
+                    videoUrl = movie.videoUrl;
                 }
                 
                 seasonSelector.style.display = 'block';
@@ -2348,13 +2437,25 @@
                 currentEpisodes = {};
                 seasonSelector.style.display = 'none';
                 document.getElementById('episodes-panel').classList.remove('active');
+                videoUrl = movie.videoUrl;
+            }
+            
+            // Process Google Drive URL
+            if (videoUrl && videoUrl !== 'YOUR_GOOGLE_DRIVE_URL_HERE') {
+                if (videoUrl.includes('drive.google.com')) {
+                    const fileId = videoUrl.match(/[-\w]{25,}/);
+                    if (fileId) {
+                        videoUrl = `https://drive.google.com/file/d/ ${fileId[0]}/preview`;
+                    }
+                }
+            } else {
+                videoUrl = 'about:blank';
             }
             
             iframe.src = videoUrl;
             title.textContent = displayTitle;
             document.getElementById('current-season-display').textContent = seasonNum;
             
-            player.classList.remove('hidden');
             player.classList.add('active');
             overlay.classList.add('active');
             
@@ -2392,11 +2493,15 @@
             document.getElementById('current-season-display').textContent = seasonNum;
             document.getElementById('season-dropdown').classList.remove('active');
             
+            // Update active state in dropdown
             document.querySelectorAll('.season-option').forEach((el, idx) => {
                 el.classList.toggle('active', idx + 1 === seasonNum);
             });
             
+            // Re-render episodes panel
             renderEpisodesPanel(currentVideo, seasonNum);
+            
+            // Auto-play first episode of selected season
             playVideo(currentVideo, seasonNum, 1);
         }
         
@@ -2439,41 +2544,20 @@
             renderEpisodesPanel(currentVideo, seasonNum);
         }
         
-        // FIXED: Video controls with proper X button handling
         function setupVideoControls() {
             const overlay = document.getElementById('video-overlay');
             const player = document.getElementById('video-player');
-            const controls = document.querySelector('.video-controls');
-            const header = document.querySelector('.video-header');
             
-            // Show overlay on mouse move over player
             player.onmousemove = () => {
                 overlay.classList.add('active');
                 clearTimeout(mouseTimer);
-                
                 mouseTimer = setTimeout(() => {
-                    const isHoveringControls = controls.matches(':hover');
-                    const isHoveringHeader = header.matches(':hover');
-                    
-                    if (!isHoveringControls && !isHoveringHeader && 
-                        !document.getElementById('episodes-panel').classList.contains('active')) {
+                    if (!document.getElementById('episodes-panel').classList.contains('active')) {
                         overlay.classList.remove('active');
                     }
-                }, 3000);
+                }, 1000);
             };
             
-            // Keep overlay active when hovering over header or controls
-            header.onmouseenter = () => {
-                overlay.classList.add('active');
-                clearTimeout(mouseTimer);
-            };
-            
-            controls.onmouseenter = () => {
-                overlay.classList.add('active');
-                clearTimeout(mouseTimer);
-            };
-            
-            // Keyboard controls
             document.removeEventListener('keydown', handleVideoKeys);
             document.addEventListener('keydown', handleVideoKeys);
         }
@@ -2524,7 +2608,7 @@
         
         function updateProgress() {
             document.getElementById('progress-fill').style.width = videoProgress + '%';
-            const current = formatTime(videoProgress * 54);
+            const current = formatTime(videoProgress * 90);
             const total = '1:30:00';
             document.getElementById('time-display').textContent = `${current} / ${total}`;
         }
@@ -2559,18 +2643,13 @@
             }
         }
         
-        // FIXED: Confirm exit function
         function confirmExit() {
             document.getElementById('exit-confirm').classList.add('active');
-            clearTimeout(mouseTimer);
-            document.getElementById('video-overlay').classList.add('active');
         }
         
-        // FIXED: Exit video function
         function exitVideo() {
             const player = document.getElementById('video-player');
             const iframe = document.getElementById('video-iframe');
-            const overlay = document.getElementById('video-overlay');
             
             if (currentVideo && videoProgress > 0) {
                 updateContinueWatching(currentVideo.id, currentSeason, currentEpisodeIndex + 1, videoProgress);
@@ -2578,11 +2657,8 @@
             
             iframe.src = '';
             player.classList.remove('active');
-            player.classList.add('hidden');
-            overlay.classList.remove('active');
             document.getElementById('exit-confirm').classList.remove('active');
             document.getElementById('episodes-panel').classList.remove('active');
-            clearTimeout(mouseTimer);
             document.removeEventListener('keydown', handleVideoKeys);
             
             if (videoProgress > 90) {
@@ -2591,12 +2667,10 @@
             
             currentVideo = null;
             currentEpisodes = {};
-            isPlaying = false;
         }
         
         function cancelExit() {
             document.getElementById('exit-confirm').classList.remove('active');
-            document.getElementById('video-overlay').classList.add('active');
         }
         
         function setVolume(e) {
@@ -2605,10 +2679,12 @@
             const percent = (e.clientX - rect.left) / rect.width;
             document.getElementById('volume-fill').style.width = (percent * 100) + '%';
         }
-
+        
         // ============================================
-        // MOVIE DETAIL MODAL
+        // MOVIE DETAIL MODAL WITH SEASON/EPISODE
         // ============================================
+        
+        let detailCurrentSeason = 1;
         
         function showMovieDetail(movie) {
             currentDetailMovie = movie;
@@ -2627,12 +2703,16 @@
             
             document.getElementById('cast-list').innerHTML = `
                 <div class="cast-member">
-                    <img src="https://ui-avatars.com/api/?name=Actor+One&background=random&size=80" alt="Actor">
+                    <img src="https://ui-avatars.com/api/?name=Actor+One&background=random&size=80 " alt="Actor">
                     <span>Actor One</span>
                 </div>
                 <div class="cast-member">
-                    <img src="https://ui-avatars.com/api/?name=Actor+Two&background=random&size=80" alt="Actor">
+                    <img src="https://ui-avatars.com/api/?name=Actor+Two&background=random&size=80 " alt="Actor">
                     <span>Actor Two</span>
+                </div>
+                <div class="cast-member">
+                    <img src="https://ui-avatars.com/api/?name=Actor+Three&background=random&size=80 " alt="Actor">
+                    <span>Actor Three</span>
                 </div>
             `;
             
@@ -2645,7 +2725,6 @@
                 episodesSection.style.display = 'none';
             }
             
-            modal.classList.remove('hidden');
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -2702,7 +2781,6 @@
         
         function closeMovieDetail() {
             document.getElementById('movie-detail').classList.remove('active');
-            document.getElementById('movie-detail').classList.add('hidden');
             document.body.style.overflow = '';
         }
         
@@ -2725,9 +2803,9 @@
                 showNotification('Already in My List', 'error');
             }
         }
-
+        
         // ============================================
-        // PROFILE DATA FUNCTIONS
+        // PROFILE-SPECIFIC DATA FUNCTIONS
         // ============================================
         
         function addToContinueWatching(movie, season = 1, episode = 1, progress = 0) {
@@ -2748,6 +2826,7 @@
             
             continueWatching.unshift(watchData);
             
+            // Keep only last 20 items
             if (continueWatching.length > 20) {
                 continueWatching = continueWatching.slice(0, 20);
             }
@@ -2780,12 +2859,13 @@
                 });
                 setProfileData('alreadyWatched', alreadyWatched);
                 
+                // Remove from continue watching
                 let continueWatching = getProfileData('continueWatching');
                 continueWatching = continueWatching.filter(m => !(m.id === movie.id && m.season === season && m.episode === episode));
                 setProfileData('continueWatching', continueWatching);
             }
         }
-
+        
         // ============================================
         // SEARCH
         // ============================================
@@ -2811,7 +2891,7 @@
             } else {
                 autocomplete.innerHTML = results.map(m => `
                     <div class="search-suggestion" onclick="playVideoById('${m.id}'); document.getElementById('search-autocomplete').classList.remove('active');">
-                        <img src="${m.poster}" alt="${m.title}" onerror="this.src='https://via.placeholder.com/40x60/333/fff?text=?''">
+                        <img src="${m.poster}" alt="${m.title}" onerror="this.src='https://via.placeholder.com/40x60/333/fff?text=? '">
                         <div>
                             <div style="font-weight: 600;">${m.title}</div>
                             <div style="font-size: 12px; color: #999;">${m.year} • ${m.type === 'tv' ? 'TV Show' : 'Movie'}</div>
@@ -2828,7 +2908,7 @@
                 autocomplete.classList.remove('active');
             }
         });
-
+        
         // ============================================
         // GENRE FILTER
         // ============================================
@@ -2858,7 +2938,7 @@
             
             addCursorHover();
         }
-
+        
         // ============================================
         // NAVIGATION
         // ============================================
@@ -2977,7 +3057,7 @@
             container.appendChild(createContentRow('Already Watched', alreadyWatched));
             addCursorHover();
         }
-
+        
         // ============================================
         // NOTIFICATIONS
         // ============================================
@@ -2992,7 +3072,7 @@
                 notification.classList.remove('active');
             }, 3000);
         }
-
+        
         // ============================================
         // PROFILE MENU
         // ============================================
@@ -3019,11 +3099,25 @@
         function signOut() {
             currentUser = null;
             currentProfile = null;
+            localStorage.removeItem('user');
             location.reload();
         }
-
+        
         // ============================================
-        // EVENT LISTENERS
+        // HEADER SCROLL EFFECT
+        // ============================================
+        
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // ============================================
+        // SETUP EVENT LISTENERS
         // ============================================
         
         function setupEventListeners() {
@@ -3033,7 +3127,7 @@
                 }
             });
         }
-
+        
         // ============================================
         // INITIALIZE
         // ============================================
