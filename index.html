@@ -1665,6 +1665,20 @@
                 <a href="#" data-section="my-list">My List</a>
                 <a href="#" data-section="continue-watching">Continue Watching</a>
                 <a href="#" data-section="watched">Already Watched</a>
+                <div class="flex items-center space-x-6">
+    <div class="relative group">
+        <button class="flex items-center space-x-2 focus:outline-none">
+            <img id="navProfileImg" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" class="w-8 h-8 rounded">
+            <span class="text-xs font-bold hidden md:block">Account</span>
+        </button>
+        
+        <div class="absolute right-0 w-48 mt-2 py-2 bg-zinc-900 border border-white/10 rounded shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <button onclick="document.getElementById('profileOverlay').classList.remove('hidden')" class="w-full text-left px-4 py-2 text-xs hover:bg-white/10 transition">Switch Profile</button>
+            <hr class="my-2 border-white/10">
+            <button onclick="window.logout()" class="w-full text-left px-4 py-2 text-xs text-red-500 hover:bg-white/10 transition font-bold">Sign Out of LUXE</button>
+        </div>
+    </div>
+</div>
             </nav>
         </div>
         <div class="header-right">
