@@ -90,4 +90,24 @@ window.addEventListener('DOMContentLoaded', () => {
     } else {
         document.getElementById('loginModal').classList.remove('hidden');
     }
+    window.logout = () => {
+    // Clear the current session
+    localStorage.removeItem('luxe_user');
+    localStorage.removeItem('luxe_active_profile');
+    
+    // Optional: Clear specific profile favorites if you want a total reset
+    // Otherwise, leave them so they are there when the user logs back in
+    
+    location.reload(); // Returns user to the login screen
+};
+
+// Update the nav profile image based on active profile
+function updateNavUI() {
+    const navImg = document.getElementById('navProfileImg');
+    if (activeProfile === "Admin") {
+        navImg.src = "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png";
+    } else {
+        navImg.src = "https://mir-s3-cdn-cf.behance.net/project_modules/disp/84c20033850498.56ba69ac290ea.png";
+    }
+}
 });
